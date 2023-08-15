@@ -43,7 +43,7 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-> This is an Blog app which allows you to show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> This is a blog app which allows you to show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
