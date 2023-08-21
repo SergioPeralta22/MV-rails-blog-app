@@ -7,7 +7,7 @@ RSpec.describe Post, type: :model do
   end
 
   let(:subject) do
-    Post.new(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 2, likes_counter: 1)
+    Post.new(author: user, title: 'Hello', text: 'This is my first posts', comments_counter: 2, likes_counter: 1)
   end
 
   it 'is valid with valid attributes' do

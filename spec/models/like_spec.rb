@@ -7,7 +7,7 @@ RSpec.describe Like, type: :model do
   end
 
   let(:post) do
-    Post.create(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+    Post.create(author: user, title: 'Hello', text: 'This is my first posts', comments_counter: 0, likes_counter: 0)
   end
 
   let(:subject) do
@@ -22,11 +22,11 @@ RSpec.describe Like, type: :model do
     expect(subject.author).to eq(user)
   end
 
-  it 'belongs to a post' do
+  it 'belongs to a posts' do
     expect(subject.post).to eq(post)
   end
 
-  it 'updates likes counter on post after save' do
+  it 'updates likes counter on posts after save' do
     expect { subject.save }.to change { post.reload.likes_counter }.by(1)
   end
 end
