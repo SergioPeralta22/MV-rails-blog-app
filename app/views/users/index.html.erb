@@ -1,2 +1,15 @@
-<h1>Index/Users</h1>
+<div class="w-full gap-2 flex flex-col  justify-center">
+<% @users.each do |user| %>
+  <%= link_to user_path(user) do %>
+    <div class="border-2 m-5 w-full flex gap-10">
+      <img class="w-[150px]" src="<%=user.photo%>" alt="<%=user.name%>'s photo"/>
+      <div class="flex justify-around items-center w-full ">
+        <h2 class="text-4xl"><%=user.name%></h2>
+        <h3 class="mt-20">Number of posts: <%=user.posts_counter%></h3>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
 
