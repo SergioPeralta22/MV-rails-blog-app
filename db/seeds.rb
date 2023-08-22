@@ -29,3 +29,17 @@ users.each do |user|
     )
   end
 end
+
+posts = Post.all
+
+posts.each do |post|
+  5.times do
+    Comment.create(
+      text: Faker::Lorem.sentence,
+      created_at: Faker::Time.between(from: post.created_at, to: DateTime.now),
+      updated_at: Faker::Time.between(from: post.created_at, to: DateTime.now),
+      author_id: users.sample.id,
+      post_id: post.id
+    )
+  end
+end
