@@ -13,13 +13,13 @@ class Post < ApplicationRecord
     likes.where(user:).exists?
   end
 
+  def recent_comments
+    comments.limit(5).order(created_at: :desc)
+  end
+
   private
 
   def update_post_counter
     author.increment!(:posts_counter)
-  end
-
-  def recent_comments
-    comments.limit(5).order(created_at: :desc)
   end
 end

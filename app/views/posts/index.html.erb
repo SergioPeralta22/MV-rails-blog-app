@@ -1,2 +1,13 @@
-<h1>Index/Posts</h1>
+<main>
+  <%= render partial: 'shared/user_card', locals: { user: @user } %>
+  <% @posts.each_with_index do |post, i| %>
+    <%= link_to user_post_url(id: post.id) do %>
+      <%= render partial: 'shared/post_card', locals: { post: post, i: i } %>
+    <% end %>
+    <div class="mt-[-1.3rem] mx-5 border-2 w-full ">
+      <%= render partial: 'shared/comments', locals: { comments: post.recent_comments } %>
+    </div>
+  <% end %>
+<%= render partial: 'shared/button', locals: { text: 'Pagination', path: user_path(@user) } %>
+</main>
 
