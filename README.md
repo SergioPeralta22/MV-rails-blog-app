@@ -68,7 +68,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **It contains four tables with a relation one to many**
+- **It allows you to create, edit and delete posts**
+- **It allows you to create, edit and delete comments**
+- **It allows you to like posts**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,7 +169,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add style and improve UX**
+- [ ] **Add more styles and improve UX**
+- [ ] **Add sing up and login features**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
