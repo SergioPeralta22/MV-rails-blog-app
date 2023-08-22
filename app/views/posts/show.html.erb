@@ -1,1 +1,13 @@
-<h1>Show/Posts</h1>
+<main>
+  <div class="mt-20 flex-col border-2">
+    <div class="p-6 border-b-2">
+      <div class="flex justify-between items-center mb-10">
+        <% user = User.find(@post.author_id) %>
+        <h2 class="font-bold text-2xl">Post #<%= @post.id %> by <%= user.name %></h2>
+        <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+      </div>
+      <p><%= @post.text %></p>
+    </div>
+    <%= render partial: 'shared/comments', locals: { comments: @comments } %>
+  </div>
+</main>
