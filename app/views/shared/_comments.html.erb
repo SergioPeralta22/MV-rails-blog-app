@@ -1,0 +1,4 @@
+<% comments.each_with_index do |comment, ind| %>
+  <% user = User.find(comment.author_id) %>
+  <p class="border-b-2 p-2 px-6"><span class="font-bold"><%= user.name %>:</span> <%= comment.text %></p>
+<% end %>

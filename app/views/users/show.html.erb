@@ -1,1 +1,11 @@
-<h1>Show/Users</h1>
+<main>
+  <%= render partial: 'shared/user_card', locals: { user: @user } %>
+  <div class="m-5 border-4 w-full p-2">
+    <h3 class="font-bold mb-2">Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+  <% @user.recent_posts.each_with_index do |post, i| %>
+    <%= render partial: 'shared/post_card', locals: { post: post, i: i } %>
+  <% end %>
+  <%= render partial: 'shared/button', locals: { text: 'See all posts', path: user_posts_path(@user) } %>
+</main>
