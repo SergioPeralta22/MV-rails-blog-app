@@ -1,0 +1,9 @@
+<%= form_with url: user_post_comments_path(@user, @post), model: Comment do |form| %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <%= form.text_area :text, placeholder: 'Text', class: 'w-full border-2' %>
+  <div class="flex justify-between">
+    <div class='bg-blue-500 w-[150px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+      <%= form.submit "Comment post" %>
+    </div>
+  </div>
+<% end %>

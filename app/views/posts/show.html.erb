@@ -10,4 +10,8 @@
     </div>
     <%= render partial: 'shared/comments', locals: { comments: @comments } %>
   </div>
+  <%= render 'shared/comment_form' %>
+  <div class="flex justify-end -mt-10 ">
+  <%= render 'shared/like' %>
+  </div>
 </main>

@@ -1,0 +1,10 @@
+<main class="flex items-center flex-col justify-center w-full h-full">
+<h1 class="text-4xl font-bold mb-16">New post</h1>
+<%= form_with model:@post do |f| %>
+  <%= f.label :title, class: 'block mb-2' %>
+  <%= f.text_field :title, placeholder: 'Title', class: 'block w-full mb-2' %>
+  <%= f.label :text, class: 'block mb-2' %>
+  <%= f.text_area :text, placeholder: 'Text', class: 'block w-full mb-2' %>
+  <%= f.submit "Create Post", class: 'block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+<% end %>
+</main>

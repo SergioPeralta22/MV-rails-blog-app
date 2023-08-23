@@ -1,0 +1,6 @@
+<%= form_with url: user_post_likes_path(@user, @post), model: Like do |form| %>
+  <%= form.hidden_field  :post_id, value: @post.id %>
+  <div class='bg-red-500 w-[150px] hover:bg-red-700 text-white font-bold py-2 px-4 rounded'>
+    <%= form.submit "Like post" %>
+  </div>
+<% end %>
