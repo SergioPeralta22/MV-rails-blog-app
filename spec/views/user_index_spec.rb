@@ -26,5 +26,4 @@ RSpec.describe 'User', type: :system do
       expect(page).to have_current_path(user_path(users.first.id))
     end
   end
-  end
 end
