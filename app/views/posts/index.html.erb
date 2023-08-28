@@ -1,6 +1,6 @@
 <main>
   <%= render partial: 'shared/user_card', locals: { user: @user } %>
-  <% @posts.each_with_index do |post, i| %>
+  <% @user.posts.each_with_index do |post, i| %>
     <%= link_to user_post_url(id: post.id) do %>
       <%= render partial: 'shared/post_card', locals: { post: post, i: i } %>
     <% end %>
