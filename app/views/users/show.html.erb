@@ -5,7 +5,9 @@
     <p><%= @user.bio %></p>
   </div>
   <% @user.recent_posts.each_with_index do |post, i| %>
-    <%= render partial: 'shared/post_card', locals: { post: post, i: i } %>
+    <%= link_to user_post_path(@user, post) do %>
+      <%= render partial: 'shared/post_card', locals: { post: post, i: i } %>
+    <% end %>
   <% end %>
   <%= render partial: 'shared/button', locals: { text: 'See all posts', path: user_posts_path(@user) } %>
 </main>

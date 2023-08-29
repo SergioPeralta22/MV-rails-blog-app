@@ -4,6 +4,7 @@
       <div class="flex justify-between items-center mb-10">
         <% user = User.find(@post.author_id) %>
         <h2 class="font-bold text-2xl">Post #<%= @post.id %> by <%= user.name %></h2>
+        <h3><%= @post.title %> </h3>
         <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
       </div>
       <p><%= @post.text %></p>
