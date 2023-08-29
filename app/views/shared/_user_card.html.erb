@@ -1,6 +1,6 @@
 <%= link_to user_path(user) do %>
   <div class="border-2 m-5 w-full flex gap-10">
-    <img class="w-[150px]" src="<%=user.photo%>" alt="<%=user.name%>'s photo"/>
+    <%= image_tag (@user.photo) %>
     <div class="flex justify-around items-center w-full">
       <h2 class="text-4xl"><%=user.name%></h2>
       <h3 class="mt-20">Number of posts: <%=user.posts_counter%></h3>
