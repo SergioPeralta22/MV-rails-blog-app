@@ -1,7 +1,15 @@
 <div class="w-full gap-2 flex flex-col justify-center">
   <button class="bg-blue-500 w-[150px] mx-auto hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%=link_to "New Post", new_post_path %></button>
   <% @users.each do |user| %>
-    <%= render partial: 'shared/user_card', locals: { user: user } %>
+    <%= link_to user_path(user) do %>
+  <div class="border-2 m-5 w-full flex gap-10">
+    <%= image_tag (user.photo), class: "w-[150px]" %>
+    <div class="flex justify-around items-center w-full">
+      <h2 class="text-4xl"><%=user.name%></h2>
+      <h3 class="mt-20">Number of posts: <%=user.posts_counter%></h3>
+    </div>
+  </div>
+<% end %>
   <% end %>
 </div>
 
