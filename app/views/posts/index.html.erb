@@ -5,7 +5,10 @@
       <%= render partial: 'shared/post_card', locals: { post: post, i: i } %>
     <% end %>
     <div class="mt-[-1.3rem] mx-5 border-2 w-full ">
-      <%= render partial: 'shared/comments', locals: { comments: post.recent_comments } %>
+      <%comments = post.recent_comments%>
+      <% comments.each_with_index do |comment, ind| %>
+        <p class="border-b-2 p-2 px-6"><span class="font-bold"><%= comment.author.name %>:</span> <%= comment.text %></p>
+      <% end %>
     </div>
   <% end %>
 <%= render partial: 'shared/button', locals: { text: 'Pagination', path: user_path(@user) } %>

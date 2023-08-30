@@ -1,4 +1,5 @@
 <% comments.each_with_index do |comment, ind| %>
+  <% user = User.find(@post.author_id) %>
   <p class="border-b-2 p-2 px-6"><span class="font-bold"><%= comment.author.name %>:</span> <%= comment.text %></p>
   <% if can? :update, comment %>
     <%= link_to 'Delete', user_post_comment_path(user, @post, comment), data: {
