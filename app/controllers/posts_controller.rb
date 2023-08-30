@@ -26,8 +26,16 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.decrement_posts_counter
-    @post.destroy
+    @likes = Like.where(post_id: @post.id)
+    @likes.each(&:destroy)
+    @comments = Comment.where(post_id: @post.id)
+    @comments.each(&:destroy)
+    if @post.destroy
+      @post.decrement_posts_counter
+      redirect_to user_path(current_user), status: :see_other
+    else
+      render 'new'
+    end
   end
 
   private
