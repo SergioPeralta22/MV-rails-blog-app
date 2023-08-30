@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.integer :posts_counter, default: 0
       t.string :role
 
+
       t.timestamps
     end
   end
