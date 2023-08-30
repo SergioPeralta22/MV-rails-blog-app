@@ -71,7 +71,7 @@
 - **It allows you to create, edit and delete posts**
 - **It allows you to create, edit and delete comments**
 - **It allows you to like posts**
-
+- **Autorization by gem devise**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
