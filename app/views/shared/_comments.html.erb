@@ -1,3 +1,6 @@
 <% comments.each_with_index do |comment, ind| %>
   <p class="border-b-2 p-2 px-6"><span class="font-bold"><%= comment.author.name %>:</span> <%= comment.text %></p>
+  <%= link_to 'Delete', user_post_comment_path(user, @post, comment), data: {
+    turbo_method: :delete
+  } %>
 <% end %>
