@@ -25,16 +25,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @likes = Like.where(post_id: @post.id)
-    @likes.each(&:destroy)
-    @comments = Comment.where(post_id: @post.id)
-    @comments.each(&:destroy)
-    if @post.destroy
-      @post.decrement_posts_counter
-      redirect_to user_path(current_user), status: :see_other
+    post = Post.find(id: params[:id])
+    if post.destroy
+      flash[:success] = 'The post was deleted'
+      post.decrement_posts_counter
+      redirect_to user_posts_path(current_user)
     else
-      render 'new'
+      flash.now[:error] = 'Could not delete post, try again'
+      render :new, status: :unprocessable_entity
     end
   end
 
